@@ -116,6 +116,16 @@ function App() {
       <Navbar currentUser={currentUser} onLogout={handleLogout} />
       
       <Routes>   
+        <Route
+        path="/"
+        element={
+          currentUser ? (
+            <Navigate to="/dashboard" />
+          ) : (
+            <Navigate to="/login" />
+          )
+        }
+      />
         <Route path="/login" element={
           currentUser ? (
             <Navigate to="/dashboard" />
